@@ -1,6 +1,16 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import { Orbitron } from "next/font/google";
+
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +37,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Include Navbar at the top of all pages */}
+        <Navbar />
+
+        {/* Render the page content here */}
         {children}
       </body>
     </html>
