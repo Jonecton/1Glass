@@ -1,52 +1,70 @@
-// app/components/Navbar.tsx
-import { useState } from "react";
+"use client";
 import Link from "next/link";
-import orbitron from "../layout"; // Import the orbitron className from layout.tsx
+import React, { useState } from "react";
+import { AiOutlineMenu, AiOutlineClose, AiOutlineFacebook } from "react-icons/ai";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleNav = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <header className="bg-gray-800 text-white">
-      {/* Office Hours Above Navbar with Centered Container */}
-      <div className="flex justify-center py-2 text-sm text-center bg-gray-700">
-        <p>Mon-Fri: 8AM - 5:30PM | Sat: 9AM - 1PM</p>
-      </div>
-
-      {/* Navbar Container */}
-      <div className="container mx-auto flex justify-between items-center py-4 px-6 max-w-[900px]">
-        {/* Left Side: Logo and Glass Shop Name */}
-        <div className="flex items-center">
-          <img src="glass_logo.png" alt="Company Logo" className="h-12" />
-          <span
-            className={`font-bold text-lg ${orbitron} text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-600`}
-          >
-            Glass Shop
-          </span>
+    <nav className="fixed w-full h-20 shadow-xl bg-white z-50">
+      {/* Centered Container with max width */}
+      <div className="max-w-[930px] w-full mx-auto flex justify-between items-center h-full px-6 space-x-6">
+        {/* Logo and Name (with nowrap to prevent wrapping) */}
+        <div className="flex items-center flex-shrink-0 whitespace-nowrap">
+          <img src="logo-full.png" alt="Glass Logo" className="h-12 md:h-14" />
+          <span className="text-lg md:text-xl font-semibold ml-2"></span>
         </div>
 
-        {/* Centered Navigation Links */}
-        <div className="flex-grow flex justify-center">
-          <nav>
-            <ul className="flex space-x-6">
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/services">Services</Link></li>
-              <li><Link href="/projects">Projects</Link></li>
-              <li><Link href="/quote">Request a Quote</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
-            </ul>
-          </nav>
+        {/* Desktop Navigation (hidden below 930px) */}
+        <div className="max-[930px]:hidden flex-grow">
+          <ul className="flex space-x-6">
+            <li className="uppercase hover:border-b text-lg md:text-xl"><Link href="/">Home</Link></li>
+            <li className="uppercase hover:border-b text-lg md:text-xl"><Link href="/services">Services</Link></li>
+            <li className="uppercase hover:border-b text-lg md:text-xl"><Link href="/projects">Projects</Link></li>
+            <li className="uppercase hover:border-b text-lg md:text-xl"><Link href="/quote">Request a Quote</Link></li>
+            <li className="uppercase hover:border-b text-lg md:text-xl"><Link href="/contact">Contact</Link></li>
+          </ul>
         </div>
 
-        {/* Right Side: Phone Number Button */}
-        <div className="flex-none w-auto">
-          <a
-            href="tel:+1234567890"
-            className="text-white bg-blue-600 py-2 px-4 rounded-full hover:bg-blue-700 transition"
-          >
-            (956) 351-5877
-          </a>
+        {/* Hamburger Menu Icon (visible below 930px) */}
+        <div onClick={handleNav} className="max-[930px]:block hidden cursor-pointer">
+          <AiOutlineMenu size={30} />
         </div>
       </div>
-    </header>
+
+      {/* Mobile Menu (only appears when menuOpen is true) */}
+      <div
+        className={`fixed top-0 left-0 w-[65%] h-screen bg-[#ecf0f3] p-10 transition-all duration-500 ease-in-out ${
+          menuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        {/* Close Button */}
+        <div className="flex justify-end">
+          <button onClick={handleNav} className="cursor-pointer">
+            <AiOutlineClose size={30} />
+          </button>
+        </div>
+
+        {/* Mobile Nav Links */}
+        <ul className="flex flex-col py-4 space-y-6">
+          <li onClick={handleNav} className="cursor-pointer text-xl"><Link href="/">Home</Link></li>
+          <li onClick={handleNav} className="cursor-pointer text-xl"><Link href="/services">Services</Link></li>
+          <li onClick={handleNav} className="cursor-pointer text-xl"><Link href="/projects">Projects</Link></li>
+          <li onClick={handleNav} className="cursor-pointer text-xl"><Link href="/quote">Request a Quote</Link></li>
+          <li onClick={handleNav} className="cursor-pointer text-xl"><Link href="/contact">Contact</Link></li>
+        </ul>
+
+        {/* Social Icons */}
+        <div className="flex justify-start pt-10">
+          <AiOutlineFacebook size={30} />
+        </div>
+      </div>
+    </nav>
   );
 };
 
