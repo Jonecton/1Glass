@@ -72,7 +72,7 @@ export default function Home() {
       {/* Contact Info */}
       <section className="mt-10">
         <h2 className="text-2xl font-semibold text-blue-500">Get a Free Quote</h2>
-        <p className="mt-2 text-gray-600">Call us today at (956) 351-5877 or request a quote online.</p>
+        <p className="mt-2 text-gray-600">Call us today at (956) 472-5806 or request a quote online.</p>
         <a
           href="/quote"
           className="mt-4 inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"

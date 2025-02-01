@@ -5,8 +5,8 @@ export default function ContactPage() {
         <p className="mt-4 text-gray-700 text-center">Reach out to us through any of the following methods:</p>
   
         <ul className="mt-6 text-lg text-gray-700 text-center space-y-2">
-          <li>📍 <strong>Address:</strong> 123 Glass St, Weslaco, TX</li>
-          <li>📞 <strong>Phone:</strong> (956) 351-5877</li>
+          <li>📍 <strong>Address:</strong> 1609 Judi St, Weslaco, TX</li>
+          <li>📞 <strong>Phone:</strong> (956) 472-5806</li>
           <li>📧 <strong>Email:</strong> info@glassshop.com</li>
         </ul>
       </main>

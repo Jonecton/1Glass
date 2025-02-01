@@ -3,7 +3,7 @@ export default function QuotePage() {
       <main className="max-w-[1100px] mx-auto p-6">
         <h1 className="text-4xl font-bold text-blue-600 text-center">Request a Quote</h1>
         <p className="mt-4 text-gray-600 text-center">
-          Fill out the form below or call us at (956) 351-5877 for a quote.
+          Fill out the form below or call us at (956) 472-5806 for a quote.
         </p>
   
         <form className="mt-6 flex flex-col max-w-lg mx-auto space-y-4">
