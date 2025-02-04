@@ -169,14 +169,14 @@ export default function Home() {
           </Swiper>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-            {["/corner_glass.jpg", "/staircase.jpg", "/shower_door.jpg"].map((img, index) => (
-              <Image key={index} src={img} alt={`Glass Project ${index + 1}`} width={500} height={300} className="rounded shadow-md" />
-            ))}
+            {["/corner_glass.jpg", "/staircase.jpg", "/shower_door.jpg"].map((img) => (
+            <Image key={img} src={img} alt="Glass Project" width={500} height={300} className="rounded shadow-md" />
+          ))}
           </div>
         )}
       </section>
-      {/* Contact Info */}
-      <section className="mt-10">
+            {/* Contact Info */}
+            <section className="mt-10">
         <h2 className="text-2xl font-semibold text-blue-500">Get a Free Quote</h2>
         <p className="mt-2 text-gray-600">Call us today at (956) 472-5806 or request a quote online.</p>
         <a
