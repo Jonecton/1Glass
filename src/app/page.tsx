@@ -82,7 +82,7 @@ export default function Home() {
 
             {/* Individual Click Handlers on Cards */}
             {[
-              { img: "/glass_on_rack.png", title: "Top-Quality Glass", text: "No shortcuts, only the best materials. We source our glass from the RGV and offer same-day service." },
+              { img: "/glass_warehouse.jpg", title: "Top-Quality Glass", text: "No shortcuts, only the best materials. We source our glass from the RGV and offer same-day service." },
               { img: "/old_worktruck.jpg", title: "We Come to You", text: "Free mobile service across the RGV." },
               { img: "/5_star_rating.png", title: "5-Star Rated", text: "100% customer satisfaction on Google." },
               { img: "/bath_mirrors.jpg", title: "Auto, Residential, & Commercial Glass", text: "We do it all!" }
