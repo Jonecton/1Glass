@@ -13,12 +13,12 @@ const Navbar = () => {
   return (
     <>
       {/* Office Hours Row */}
-      <div className="absolute top-0 left-0 w-full flex justify-center py-2 text-sm text-center bg-gray-700 text-white z-50">
+      <div className="fixed top-0 left-0 w-full flex justify-center py-2 text-sm text-center bg-gray-700 text-white z-50">
         <p>Mon-Fri: 8AM - 5:30PM | Sat: 9AM - 1PM</p>
       </div>
 
       {/* Navbar */}
-      <nav className="absolute top-8 w-full h-20 shadow-xl bg-white z-50">
+      <nav className="fixed top-[32px] w-full h-20 shadow-xl bg-white z-50">
         {/* Centered Container with max width */}
         <div className="max-w-[815px] w-full mx-auto flex justify-between items-center h-full px-6 space-x-6">
           {/* Logo and Name */}
