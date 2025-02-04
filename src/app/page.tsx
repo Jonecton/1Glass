@@ -36,7 +36,7 @@ export default function Home() {
     }
   };
 
-  const handleCardClick = (e: React.MouseEvent, index: number) => {
+  const handleCardClick = (e: React.MouseEvent) => {
     if (!containerRef.current) return;
 
     const containers = Array.from(containerRef.current.children);
@@ -90,7 +90,7 @@ export default function Home() {
               <div
                 key={index}
                 className="min-w-[280px] p-4 bg-gray-100 rounded-lg shadow-md snap-center cursor-pointer"
-                onClick={(e) => handleCardClick(e, index)}
+                onClick={(e) => handleCardClick(e)}
               >
                 <Image 
                   src={item.img} 
