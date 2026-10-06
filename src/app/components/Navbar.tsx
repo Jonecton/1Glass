@@ -1,10 +1,16 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineFacebook } from "react-icons/ai";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const pageTitle = pathname === "/services" ? "Services"
+    : pathname === "/projects" ? "Projects"
+    : pathname === "/contact" || pathname === "/quote" ? "Contact & Quotes"
+    : "Home";
 
   const handleNav = () => {
     setMenuOpen(!menuOpen);
@@ -22,10 +28,10 @@ const Navbar = () => {
         {/* Centered Container with max width */}
         <div className="max-w-[815px] w-full mx-auto flex justify-between items-center h-full px-6 space-x-6">
           {/* Logo and Name */}
-          <div className="flex items-center flex-shrink-0 whitespace-nowrap">
+          <Link href="/" aria-label="Glass Shop home" className="flex items-center flex-shrink-0 whitespace-nowrap">
             <img src="logo-full.png" alt="Glass Logo" className="h-12 nav:h-14" />
             <span className="text-lg nav:text-xl font-semibold ml-2"></span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation (Hidden Below 850px) */}
           <div className="hidden nav:flex flex-grow">
@@ -33,15 +39,15 @@ const Navbar = () => {
               <li className="uppercase hover:border-b text-lg nav:text-xl"><Link href="/">Home</Link></li>
               <li className="uppercase hover:border-b text-lg nav:text-xl"><Link href="/services">Services</Link></li>
               <li className="uppercase hover:border-b text-lg nav:text-xl"><Link href="/projects">Projects</Link></li>
-              <li className="uppercase hover:border-b text-lg nav:text-xl"><Link href="/quote">Request a Quote</Link></li>
-              <li className="uppercase hover:border-b text-lg nav:text-xl"><Link href="/contact">Contact</Link></li>
+              <li className="uppercase hover:border-b text-lg nav:text-xl"><Link href="/contact">Contact &amp; Quotes</Link></li>
             </ul>
           </div>
 
           {/* Hamburger Menu Icon (Visible Below 850px) */}
-          <div onClick={handleNav} className="nav:hidden cursor-pointer text-gray-600">
-            <AiOutlineMenu size={30} />
-          </div>
+          <button type="button" onClick={handleNav} aria-label={`Open navigation, current page: ${pageTitle}`} aria-expanded={menuOpen} className="nav:hidden flex min-h-11 items-center text-gray-600">
+            <span className="flex h-[21px] items-center whitespace-nowrap rounded-l-md border-y-2 border-l-2 border-current pl-2 pr-1 text-xs font-semibold">{pageTitle}</span>
+            <AiOutlineMenu size={30} className="flex-shrink-0" />
+          </button>
         </div>
 
         {/* Mobile Menu (Hidden by Default, Appears on Click) */}
@@ -62,8 +68,7 @@ const Navbar = () => {
             <li onClick={handleNav} className="cursor-pointer text-xl"><Link href="/">Home</Link></li>
             <li onClick={handleNav} className="cursor-pointer text-xl"><Link href="/services">Services</Link></li>
             <li onClick={handleNav} className="cursor-pointer text-xl"><Link href="/projects">Projects</Link></li>
-            <li onClick={handleNav} className="cursor-pointer text-xl"><Link href="/quote">Request a Quote</Link></li>
-            <li onClick={handleNav} className="cursor-pointer text-xl"><Link href="/contact">Contact</Link></li>
+            <li onClick={handleNav} className="cursor-pointer text-xl"><Link href="/contact">Contact &amp; Quotes</Link></li>
           </ul>
 
           {/* Social Icons */}
