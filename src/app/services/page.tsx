@@ -8,29 +8,29 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    id: "residential", title: "Residential glass", image: "/shower_door.jpg",
+    id: "residential", title: "Residential glass", image: "/projects/home/shower-glass-panels.jpg",
     alt: "Glass shower enclosure from the shop’s project gallery",
     description: "Bring more light and a clean finish to your home with glass made for your space.",
     items: ["Custom shower doors and enclosures", "Home windows and glass replacement", "Bathroom, gym, and wall mirrors", "Glass railings"],
     action: "Tell us about your home project",
   },
   {
-    id: "commercial", title: "Commercial glass", image: "/corner_glass.jpg",
+    id: "commercial", title: "Commercial glass", image: "/projects/commercial/commercial-window-wall.jpg",
     alt: "Architectural glass from the shop’s project gallery",
     description: "Practical glass solutions for welcoming storefronts and functional workspaces.",
     items: ["Storefront windows and glass", "Office glass partitions", "Desk dividers", "Custom mirrors for gyms and studios"],
     action: "Discuss your business needs",
   },
   {
-    id: "auto", title: "Auto glass", image: "/old_worktruck.jpg",
-    alt: "The glass shop’s work truck",
+    id: "auto", title: "Auto glass", image: "/projects/auto/vehicle-door-glass.jpg",
+    alt: "Vehicle door glass work in the shop",
     description: "Have a damaged vehicle window? Contact us to discuss the glass and service your vehicle needs.",
     items: ["Windshield glass", "Side windows", "Rear windows"],
     action: "Ask about your vehicle",
   },
   {
-    id: "custom", title: "Custom glass", image: "/staircase.jpg",
-    alt: "Glass staircase railing from the shop’s project gallery",
+    id: "custom", title: "Custom glass", image: "/projects/custom/oval-entry-door.jpg",
+    alt: "Decorative oval glass in an entry door",
     description: "For projects beyond the usual window or mirror, start with your idea and we’ll discuss the possibilities.",
     items: ["Glass table tops", "Glass for hunting blinds", "Aquarium glass projects", "Other made-to-fit glass projects"],
     action: "Bring us your idea",
@@ -75,7 +75,7 @@ export default function ServicesPage() {
         {services.map((service) => (
           <article key={service.id} id={service.id} className="flex scroll-mt-32 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white">
             <div className="relative h-56 sm:h-64">
-              <Image src={service.image} alt={service.alt} fill sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 510px" className="object-cover" />
+              <Image src={service.image} alt={service.alt} fill sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 510px" className="bg-blue-50 object-contain" />
             </div>
             <div className="flex flex-1 flex-col p-6">
               <h2 className="text-2xl font-bold">{service.title}</h2>

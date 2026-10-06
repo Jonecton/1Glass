@@ -16,9 +16,9 @@ const services = [
 ];
 
 const projects = [
-  { image: "/shower_door.jpg", title: "Custom shower enclosure" },
-  { image: "/staircase.jpg", title: "Glass staircase railing" },
-  { image: "/corner_glass.jpg", title: "Architectural glass" },
+  { image: "/projects/home/shower-glass-panels.jpg", title: "Custom shower enclosure" },
+  { image: "/projects/commercial/office-partition-wide.jpg", title: "Office glass partition" },
+  { image: "/projects/custom/oval-entry-door.jpg", title: "Decorative entry glass" },
 ];
 
 const reasons = [
@@ -62,7 +62,7 @@ export default function Home() {
         </div>
         <figure className="min-w-0">
           <div className="relative h-80 overflow-hidden rounded-xl bg-slate-50 md:h-[430px]">
-            <Image src="/shower_door.jpg" alt="Custom glass shower enclosure" fill priority sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 500px" className="object-contain" />
+            <Image src="/projects/home/shower-glass-panels.jpg" alt="Custom glass shower enclosure" fill priority sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 500px" className="object-contain" />
           </div>
           <figcaption className="mt-2 text-xs text-slate-500">Custom shower enclosure · From our project gallery</figcaption>
         </figure>

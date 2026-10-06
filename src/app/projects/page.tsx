@@ -6,52 +6,7 @@ export const metadata: Metadata = {
   description: "Explore auto, home, commercial, and custom glass projects from #1 Glass Shop in Weslaco.",
 };
 
-const projectSections = [
-  {
-    id: "auto", label: "Auto", title: "Auto glass projects",
-    description: "Glass work for windshields and vehicle windows.",
-    projects: [
-      { title: "Windshield replacement", description: "Space for a windshield project photo and a short description of the vehicle and work completed." },
-      { title: "Vehicle window glass", description: "Space for a side or rear window project, including the glass replaced and any useful details." },
-      { title: "Side window replacement", description: "Space for a side window photo and details about the vehicle and replacement glass." },
-      { title: "Rear window replacement", description: "Space for a rear window project and a description of the completed work." },
-      { title: "Another auto project", description: "Space for another vehicle glass photo and a short project description." },
-    ],
-  },
-  {
-    id: "home", label: "Home", title: "Home glass projects",
-    description: "Shower enclosures, mirrors, windows, and glass railings.",
-    projects: [
-      { title: "Custom shower enclosure", description: "Space for a completed shower enclosure and details about its layout, glass, and finish." },
-      { title: "Bathroom mirrors", description: "Space for a mirror installation and a short description of how it fits the room." },
-      { title: "Home window glass", description: "Space for a window glass project and details about the room and installation." },
-      { title: "Glass staircase railing", description: "Space for a railing photo and a description of the glass used in the space." },
-      { title: "Wall mirror installation", description: "Space for a home mirror project and a short description of the finished result." },
-    ],
-  },
-  {
-    id: "commercial", label: "Commercial", title: "Commercial glass projects",
-    description: "Glass solutions for storefronts and workspaces.",
-    projects: [
-      { title: "Storefront glass", description: "Space for a business storefront photo and details about the installation or replacement." },
-      { title: "Office glass partition", description: "Space for a workspace project showing how glass divides the area while preserving light." },
-      { title: "Gym mirrors", description: "Space for a commercial mirror installation and details about the space." },
-      { title: "Desk dividers", description: "Space for glass divider photos and a description of the workspace layout." },
-      { title: "Another commercial project", description: "Space for another business glass project and a short description of the work." },
-    ],
-  },
-  {
-    id: "custom", label: "Custom", title: "Custom glass projects",
-    description: "Glass made for ideas beyond the everyday.",
-    projects: [
-      { title: "Glass table top", description: "Space for a custom table top and details about its shape, dimensions, or intended use." },
-      { title: "Made-to-fit glass", description: "Space for a unique glass project and the customer’s idea that inspired it." },
-      { title: "Hunting blind glass", description: "Space for a hunting blind glass photo and details about the custom fit." },
-      { title: "Aquarium glass", description: "Space for an aquarium glass project and a short description of the design." },
-      { title: "Another custom project", description: "Space for a one-of-a-kind glass project and the idea behind it." },
-    ],
-  },
-];
+import { projectSections } from './project-data';
 
 const eyebrowClass = "text-xs font-bold uppercase tracking-[0.18em] text-blue-600";
 const focusClass = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600";

@@ -2,12 +2,12 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Autoplay, EffectCards, Keyboard, Pagination } from "swiper/modules";
-import { FiImage } from "react-icons/fi";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
 
-type Project = { title: string; description: string };
+type Project = { image: string; title: string; description: string };
 
 export default function ProjectDeck({ label, projects }: { label: string; projects: Project[] }) {
   return (
@@ -30,12 +30,11 @@ export default function ProjectDeck({ label, projects }: { label: string; projec
       {projects.map((project) => (
         <SwiperSlide key={project.title} className="!h-auto">
         <article className="h-full overflow-hidden rounded-xl border border-blue-100 bg-white">
-          <div className="flex h-64 flex-col items-center justify-center gap-3 bg-blue-50 px-5 text-center">
-            <FiImage aria-hidden="true" size={28} className="text-blue-600" />
-            <p className="text-sm text-slate-600">{label} project photo coming soon</p>
+          <div className="relative h-80 bg-blue-50">
+            <Image src={project.image} alt={project.title} fill sizes="(max-width: 1100px) 50vw, 510px" className="object-contain" />
           </div>
           <div className="p-6 text-center">
-            <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">Sample project</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">{label} glass</p>
             <h3 className="mt-3 text-xl font-semibold">{project.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-slate-600">{project.description}</p>
           </div>
@@ -48,7 +47,6 @@ export default function ProjectDeck({ label, projects }: { label: string; projec
       <Swiper
         modules={[EffectCards, A11y, Keyboard, Pagination]}
         effect="cards"
-        loop
         cardsEffect={{ perSlideOffset: 10, perSlideRotate: 3, slideShadows: false }}
         grabCursor
         keyboard={{ enabled: true, onlyInViewport: true }}
@@ -59,12 +57,11 @@ export default function ProjectDeck({ label, projects }: { label: string; projec
         {projects.map((project) => (
           <SwiperSlide key={project.title} className="overflow-hidden rounded-xl border border-blue-200 bg-white shadow-md">
             <article>
-              <div className="flex h-52 flex-col items-center justify-center gap-3 bg-blue-50 px-5 text-center">
-                <FiImage aria-hidden="true" size={28} className="text-blue-600" />
-                <p className="text-sm text-slate-600">{label} project photo coming soon</p>
+              <div className="relative h-64 bg-blue-50">
+                <Image src={project.image} alt={project.title} fill sizes="(max-width: 767px) 85vw, 360px" className="object-contain" />
               </div>
               <div className="min-h-52 p-6 text-center">
-                <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">Sample project</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">{label} glass</p>
                 <h3 className="mt-3 text-xl font-semibold">{project.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-slate-600">{project.description}</p>
               </div>
