@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import QuoteForm from "../components/QuoteForm";
 
 export const metadata: Metadata = {
   title: "Contact & Quotes | #1 Glass Shop",
@@ -6,8 +7,6 @@ export const metadata: Metadata = {
 };
 
 const eyebrowClass = "text-xs font-bold uppercase tracking-[0.18em] text-blue-600";
-const inputClass = "w-full rounded-md border border-slate-300 bg-white px-3 py-3 text-base text-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600";
-const labelClass = "mb-2 block text-sm font-semibold";
 const callClass = "inline-flex min-h-11 items-center justify-center rounded-md bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600";
 
 export default function ContactPage() {
@@ -44,16 +43,7 @@ export default function ContactPage() {
           <p className={eyebrowClass}>Tell us what you need</p>
           <h2 id="quote-heading" className="mt-3 text-2xl font-bold tracking-tight">Request a quote</h2>
           <p className="mt-3 leading-relaxed text-slate-600">Share your project details and how we can reach you.</p>
-          <form className="mt-6 space-y-5" aria-describedby="quote-availability">
-            <div className="grid gap-5 sm:grid-cols-2">
-              <div><label htmlFor="quote-name" className={labelClass}>Your name</label><input id="quote-name" name="name" autoComplete="name" placeholder="Full name" required className={inputClass} /></div>
-              <div><label htmlFor="quote-phone" className={labelClass}>Phone number</label><input id="quote-phone" name="phone" type="tel" autoComplete="tel" placeholder="(956) 555-0123" required className={inputClass} /></div>
-            </div>
-            <div><label htmlFor="quote-email" className={labelClass}>Email <span className="font-normal text-slate-500">(optional)</span></label><input id="quote-email" name="email" type="email" autoComplete="email" placeholder="you@example.com" className={inputClass} /></div>
-            <div><label htmlFor="quote-description" className={labelClass}>Tell us about your project</label><textarea id="quote-description" name="description" rows={5} required placeholder="What glass do you need? Include approximate measurements or vehicle details if you have them." className={inputClass} /></div>
-            <p id="quote-availability" className="rounded-lg bg-blue-50 p-4 text-sm leading-relaxed text-slate-600">Online quote requests are not available yet. Please call (956) 472-5806 to request a quote.</p>
-            <button type="button" disabled className="min-h-11 rounded-md bg-slate-200 px-5 py-3 text-sm font-semibold text-slate-500">Request a quote · Coming soon</button>
-          </form>
+          <QuoteForm />
         </section>
       </div>
       <footer className="mt-10 border-t border-slate-200 py-5 text-xs text-slate-500">#1 Glass Shop · Weslaco, Texas</footer>

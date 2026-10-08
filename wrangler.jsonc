@@ -14,5 +14,8 @@
       "service": "1glass"
     }
   ],
-  "images": { "binding": "IMAGES" }
+  "images": { "binding": "IMAGES" },
+  "ratelimits": [
+    { "name": "QUOTE_RATE_LIMITER", "namespace_id": "100143", "simple": { "limit": 3, "period": 60 } }
+  ]
 }
