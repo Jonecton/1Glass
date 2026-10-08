@@ -25,7 +25,13 @@ export async function POST(request: Request) {
   if (typeof requestId !== "string" || !/^[0-9a-f-]{36}$/i.test(requestId)) return respond("Please reload the page and try again.", 400);
   try {
     const env = getCloudflareContext().env as unknown as QuoteEnv;
-    if (!env.RESEND_API_KEY || !env.QUOTE_RATE_LIMITER) return respond("Online requests are temporarily unavailable. Please call (956) 472-5806.", 503);
+    if (!env.RESEND_API_KEY || !env.QUOTE_RATE_LIMITER) {
+      console.error("Quote configuration missing", {
+        resendApiKeyMissing: !env.RESEND_API_KEY,
+        rateLimiterMissing: !env.QUOTE_RATE_LIMITER,
+      });
+      return respond("Online requests are temporarily unavailable. Please call (956) 472-5806.", 503);
+    }
     const ip = request.headers.get("cf-connecting-ip") || "unknown";
     const { success } = await env.QUOTE_RATE_LIMITER.limit({ key: `quote:${ip}` });
     if (!success) return respond("Too many requests. Please wait a minute and try again.", 429);
